@@ -1,0 +1,118 @@
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*  Utility Classes                                      */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.flex {
+  display: flex;
+}
+
+.center {
+  display: grid;
+  place-items: center;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
+.gap-2 {
+  gap: 2rem;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*  Base                                                 */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+:root {
+  --app-background-dark: rgb(24, 23, 32);
+  --secondary-backround: #272a31;
+  --border-radius-5: 5px;
+}
+
+body {
+  background-color: var(--app-background-dark);
+  font-family: 'Noto Sans', 'Open Sans', arial, sans-serif;
+}
+
+.container {
+  width: min(100% - 30px, 1080px);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1, h2, p {
+  color: #fff;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*  Component                                            */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+input, .contact-grid-container > div {
+  border-radius: var(--border-radius-5);
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+form input {
+  height: 4rem;
+}
+
+.input {
+  padding: 0 1rem;
+  background-color: var(--secondary-backround); 
+  color: #fff;
+  width: 35rem;
+}
+
+.add-button {
+  color: #fff;
+  background-color: #007bff;
+  font-weight: 500;
+  width: 7.5rem;
+}
+
+.error-message {
+  color: rgb(224, 0, 0);
+  font-size: 1.3rem;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/*  Contact grid                                         */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.contact-grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 27rem);
+  grid-template-rows: repeat(3, 11rem);
+  margin-top: 3rem;
+}
+
+.contact-grid-container > div {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--secondary-backround);
+  border: 1px solid rgb(0 0 0 / 0.15);
+}
+
+.contact-grid-container > div > p {
+  font-size: 1.4rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.saved-contacts {
+  position: absolute;
+  bottom: 30px;
+  right: 75px;
+  color: #fff;
+  background-color: #ffa500;
+  padding: 1rem 2.2rem;
+  border-radius: 50px;
+  font-weight: 500;
+}
