@@ -64,6 +64,14 @@ function createContact() {
   contactContainer.innerHTML = contactContent;
   contactsContainer.prepend(contactContainer);
 
+  utils.listen('click', contactContainer, () => {
+    contactContainer.remove();
+    contactArray = contactArray.filter(contact => contact !== newContact);
+
+    contactCount --;
+    updateContactCount()
+  })
+
   updateContactCount();
 }
 
@@ -98,6 +106,6 @@ function validateInput(inputArr) {
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-/*  Event Listners                                       */
+/*  Event Listeners                                       */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 utils.listen('click', addButton, createContact);
