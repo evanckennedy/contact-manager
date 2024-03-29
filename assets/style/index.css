@@ -81,6 +81,7 @@ form input {
 .error-message {
   color: rgb(224, 0, 0);
   font-size: 1.3rem;
+  min-height: 2rem;
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
