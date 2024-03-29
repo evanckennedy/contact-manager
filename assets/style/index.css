@@ -30,6 +30,7 @@
   --app-background-dark: rgb(24, 23, 32);
   --secondary-backround: #272a31;
   --border-radius-5: 5px;
+  --red: #e00000;
 }
 
 body {
@@ -79,7 +80,7 @@ form input {
 }
 
 .error-message {
-  color: rgb(224, 0, 0);
+  color: var(--red);
   font-size: 1.3rem;
   min-height: 2rem;
 }
@@ -101,6 +102,12 @@ form input {
   justify-content: center;
   background-color: var(--secondary-backround);
   border: 1px solid rgb(0 0 0 / 0.15);
+  cursor: pointer;
+  transition: border-color 0.15s ease-in-out;
+}
+
+.contact-grid-container > div:hover {
+  border-color: var(--red);
 }
 
 .contact-grid-container > div > p {
