@@ -29,7 +29,7 @@ function createContactObj(inputArr) {
   let newContact = new Contact(...inputArr);
   contactArray.push(newContact);
   contactCount++;
-  return newContact
+  return newContact;
 }
 
 function updateContactCount() {
@@ -37,7 +37,7 @@ function updateContactCount() {
 }
 
 function createContact() {
-  if (contactCount > 9) {
+  if (contactCount >= 9) {
     return;
   }
 
