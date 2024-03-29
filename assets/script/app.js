@@ -11,7 +11,8 @@ import Contact from './Contact.js';
 const input = utils.select('.input');
 const contactsContainer = utils.select('.contact-grid-container');
 const addButton = utils.select('.add-button');
-const savedContacts = utils.select('.saved-contacts span')
+const savedContacts = utils.select('.saved-contacts span');
+const errorMessage = utils.select('.error-message');
 let contactArray = [];
 let contactCount = 0;
 
@@ -41,7 +42,14 @@ function createContact() {
     return;
   }
 
-  let newContact = createContactObj(getInputArr());
+  let inputArray = getInputArr();
+  
+  if (!validateInput(inputArray)) {
+    return;
+  }
+  errorMessage.classList.add('hidden');
+
+  let newContact = createContactObj(inputArray);
 
   let contactContainer = document.createElement('div');
   const contactContent = `
@@ -70,7 +78,24 @@ function hasValidEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 }
+
+function validateInput(inputArr) {
+  if (!hasThreeElements(inputArr)) {
+    errorMessage.textContent = 'Please enter a valid name, city, and email, separated by commas';
+    errorMessage.classList.remove('hidden');
+    return false;
+  }
+
+  if (!hasValidEmail(inputArr[2])) {
+    errorMessage.textContent = 'Please enter a valid email.';
+    errorMessage.classList.remove('hidden');
+    return false;
+  }
+
+  return true;
+}
+
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*  Event Listners                                       */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-utils.listen('click', addButton, createContact)
+utils.listen('click', addButton, createContact);
