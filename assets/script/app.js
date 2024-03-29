@@ -43,7 +43,8 @@ function createContact() {
     errorMessage.classList.remove('hidden');
     return;
   }
-  errorMessage.classList.add('hidden');
+/*   // If the contact count is less than 9, hide the error message
+  errorMessage.classList.add('hidden'); */
 
   let inputArray = getInputArr();
   
@@ -56,11 +57,9 @@ function createContact() {
 
   let contactContainer = document.createElement('div');
   const contactContent = `
-  <div>
-    <p>Name: ${newContact.name}</p>
-    <p>City: ${newContact.city}</p>
-    <p>Email: ${newContact.email}</p>
-  </div>
+  <p>Name: ${newContact.name}</p>
+  <p>City: ${newContact.city}</p>
+  <p>Email: ${newContact.email}</p>
   `; 
   contactContainer.innerHTML = contactContent;
   contactsContainer.prepend(contactContainer);
