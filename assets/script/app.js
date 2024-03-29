@@ -39,8 +39,11 @@ function updateContactCount() {
 
 function createContact() {
   if (contactCount >= 9) {
+    errorMessage.textContent = 'Storage is full';
+    errorMessage.classList.remove('hidden');
     return;
   }
+  errorMessage.classList.add('hidden');
 
   let inputArray = getInputArr();
   
