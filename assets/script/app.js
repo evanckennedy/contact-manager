@@ -43,8 +43,6 @@ function createContact() {
     errorMessage.classList.remove('hidden');
     return;
   }
-/*   // If the contact count is less than 9, hide the error message
-  errorMessage.classList.add('hidden'); */
 
   let inputArray = getInputArr();
   
@@ -73,8 +71,9 @@ function createContact() {
 
     errorMessage.textContent = '';
     errorMessage.classList.add('hidden');
-  })
+  });
 
+  input.value = '';
   updateContactCount();
 }
 
