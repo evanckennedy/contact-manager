@@ -70,6 +70,9 @@ function createContact() {
 
     contactCount --;
     updateContactCount()
+
+    errorMessage.textContent = '';
+    errorMessage.classList.add('hidden');
   })
 
   updateContactCount();
