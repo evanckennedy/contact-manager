@@ -51,7 +51,7 @@ h1, h2, p {
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-/*  Component                                            */
+/*  Title, Forms                                         */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 input, .contact-grid-container > div {
   border-radius: var(--border-radius-5);
@@ -92,7 +92,7 @@ form input {
   display: grid;
   grid-template-columns: repeat(3, 27rem);
   grid-template-rows: repeat(3, 11rem);
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .contact-grid-container > div {
